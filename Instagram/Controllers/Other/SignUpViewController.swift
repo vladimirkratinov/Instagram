@@ -186,7 +186,21 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             return
         }
         
-        // Sign In with AuthManager
+        let data = profilePictureImageView.image?.pngData()
+        
+        // Sign Up with AuthManager
+        AuthManager.shared.signUp(
+            email: email,
+            username: username,
+            password: password,
+            profilePicture: data) { result in
+                switch result {
+                case .success(let user):
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            }
     }
     
     private func presentError() {

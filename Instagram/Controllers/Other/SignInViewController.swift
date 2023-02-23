@@ -77,6 +77,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         passwordField.delegate = self
         
         addButtonActions()
+        
+        // Testing User model as a dictionary:
+//        let user = User(username: "wizardexiles", email: "wizardexiles@gmail.com")
+//        print(user.asDictionary())
     }
 
     override func viewDidLayoutSubviews() {

@@ -159,9 +159,9 @@
 			children = (
 				F7BAC56C29A71AC2009A6808 /* AppDelegate.swift */,
 				F7BAC56E29A71AC2009A6808 /* SceneDelegate.swift */,
+				F731126729A7FA2B00E1122E /* Extensions.swift */,
 				F7BAC57529A71AC2009A6808 /* Assets.xcassets */,
 				F731126329A7EDFC00E1122E /* GoogleService-Info.plist */,
-				F731126729A7FA2B00E1122E /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
