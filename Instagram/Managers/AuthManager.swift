@@ -47,7 +47,17 @@ final class AuthManager {
             
             DatabaseManager.shared.createUser(newUser: newUser) { success in
                 if success {
-                    
+                    StorageManager.shared.uploadProfilePicture(
+                        username: username,
+                        data: profilePicture
+                    ) { uploadSuccess in
+                        if uploadSuccess {
+                            completion(.success(newUser))
+                        }
+                        else {
+                            completion(.failure(AuthError.newUserCreation))
+                        }
+                    }
                 }
                 else {
                     completion(.failure(AuthError.newUserCreation))
