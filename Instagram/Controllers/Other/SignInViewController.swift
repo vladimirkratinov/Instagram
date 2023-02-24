@@ -44,7 +44,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     private let createAccountButton: UIButton = {
         let button = UIButton()
         button.setTitle("Create Account", for: .normal)
-        button.backgroundColor = .systemRed
+        button.backgroundColor = .systemGreen 
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
         return button
