@@ -44,7 +44,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     private let createAccountButton: UIButton = {
         let button = UIButton()
         button.setTitle("Create Account", for: .normal)
-        button.backgroundColor = .systemGreen 
+        button.backgroundColor = .systemBlue
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
         return button
@@ -118,21 +118,58 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         privacyButton.addTarget(self, action: #selector(didTapPrivacy), for: .touchUpInside)
     }
     
+    private func showAlert(withTitle title: String?, message: String?, viewController: UIViewController) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        viewController.present(alertController, animated: true, completion: nil)
+    }
+    
     //MARK: - Actions
     
     @objc func didTapSignIn() {
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
         
+        //        guard let email = emailField.text,
+        //              let password = passwordField.text,
+        //              !email.trimmingCharacters(in: .whitespaces).isEmpty,
+        //              !password.trimmingCharacters(in: .whitespaces).isEmpty,
+        //              password.count >= 6 else {
+        //            return
+        //        }
+        
         guard let email = emailField.text,
-              let password = passwordField.text,
-              !email.trimmingCharacters(in: .whitespaces).isEmpty,
-              !password.trimmingCharacters(in: .whitespaces).isEmpty,
-              password.count >= 6 else {
+              let password = passwordField.text else {
+            return
+        }
+        
+        guard !email.trimmingCharacters(in: .whitespaces).isEmpty else {
+            showAlert(withTitle: "Error", message: "Email field is empty", viewController: self)
+            print("Email field is empty")
+            return
+        }
+        
+        guard !password.trimmingCharacters(in: .whitespaces).isEmpty else {
+            showAlert(withTitle: "Error", message: "Password field is empty", viewController: self)
+            print("Password field is empty")
             return
         }
         
         // Sign In with AuthManager
+        AuthManager.shared.signIn(email: email, password: password) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    let vc = TabBarViewController()
+                    vc.modalPresentationStyle = .fullScreen
+                    self?.present(vc, animated: true)
+                    
+                case .failure:
+                    print("failed")
+                }
+            }
+        }
     }
     
     @objc func didTapCreateAccount() {

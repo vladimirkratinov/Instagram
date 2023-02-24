@@ -29,10 +29,18 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = user.username.lowercased()
         view.backgroundColor = .systemBackground
-        
         configure()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        title = user.username.lowercased()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        title = "Profile"
     }
     
     private func configure() {

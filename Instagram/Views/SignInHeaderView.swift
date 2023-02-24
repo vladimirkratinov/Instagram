@@ -13,7 +13,7 @@ class SignInHeaderView: UIView {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "textLogo")
+        imageView.image = UIImage(named: "racoon_logo")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -31,7 +31,7 @@ class SignInHeaderView: UIView {
     
     private func createGradient() {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.systemBlue.cgColor, UIColor.systemPink.cgColor]
+        gradientLayer.colors = [UIColor.systemYellow.cgColor, UIColor.systemGreen.cgColor]
         gradientLayer.frame = layer.bounds
         layer.addSublayer(gradientLayer)
         self.gradientLayer = gradientLayer
@@ -40,6 +40,9 @@ class SignInHeaderView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         gradientLayer?.frame = layer.bounds
+        gradientLayer?.cornerRadius = 10
+        gradientLayer?.borderWidth = 6
+        gradientLayer?.borderColor = UIColor.secondarySystemBackground.cgColor
         imageView.frame = CGRect(x: width/4, y: 20, width: width/2, height: height-40)
     }
 }

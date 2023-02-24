@@ -16,6 +16,22 @@ final class DatabaseManager {
     
     let database = Firestore.firestore()
     
+    public func findUser(with email: String, completion: @escaping (User?) -> Void) {
+        let ref = database.collection("users")
+        ref.getDocuments { snapshot, error in
+            guard let users = snapshot?.documents.compactMap({ User(with: $0.data()) }), error == nil else {
+                completion(nil)
+                return
+            }
+            
+            let user = users.first(where: { $0.email == email })
+            completion(user)
+            
+//            let userData = users.compactMap { $0.data() }
+//            let myUsers = userData.compactMap { User(with: $0) }
+        }
+    }
+    
     public func createUser(newUser: User, completion: @escaping (Bool) -> Void) {
         // Create a reference to a document with a particular path
         // Document/subcollection/submaterial

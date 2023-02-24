@@ -13,12 +13,12 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ZNl-6E-497">
-                                <rect key="frame" x="76" y="320" width="1378" height="212"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="racoon_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ZNl-6E-497">
+                                <rect key="frame" x="76" y="320" width="240" height="212"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="1HJ-Bh-40e"/>
                                     <constraint firstAttribute="height" constant="212" id="QWx-vT-1EH"/>
@@ -26,7 +26,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="ZNl-6E-497" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="Boe-c6-V6n"/>
                             <constraint firstItem="ZNl-6E-497" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Vr2-jQ-cUA"/>
@@ -41,9 +41,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LogoBackground" width="1378" height="1378"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="racoon_logo" width="1280" height="998"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
