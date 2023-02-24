@@ -166,7 +166,17 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                     self?.present(vc, animated: true)
                     
                 case .failure:
-                    print("failed")
+                    DatabaseManager.shared.findUser(with: email) { user in
+                        if user?.email != email {
+                            self?.showAlert(withTitle: "Error", message: "Wrong Email", viewController: self!)
+                            print("Wrong Email")
+                            self?.passwordField.text = nil
+                        } else {
+                            self?.showAlert(withTitle: "Error", message: "Wrong Password", viewController: self!)
+                            print("Wrong Password")
+                            self?.passwordField.text = nil
+                        }
+                    }
                 }
             }
         }
