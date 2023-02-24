@@ -51,16 +51,20 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }()
     
     private let termsButton: UIButton = {
-        let button = UIButton()
-        button.setTitleColor(.link, for: .normal)
+        let button = UIButton(type: .system)
+        button.setTitleColor(.secondaryLabel, for: .normal)
         button.setTitle("Terms of Service", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 14)
+//        button.layer.borderWidth = 5
         return button
     }()
     
     private let privacyButton: UIButton = {
-        let button = UIButton()
-        button.setTitleColor(.link, for: .normal)
+        let button = UIButton(type: .system)
+        button.setTitleColor(.secondaryLabel, for: .normal)
         button.setTitle("Privacy Policy", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 14)
+//        button.layer.borderWidth = 5
         return button
     }()
     
@@ -97,8 +101,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         passwordField.frame = CGRect(x: 25, y: emailField.bottom+10, width: view.width-50, height: 50)
         signInButton.frame = CGRect(x: 35, y: passwordField.bottom+20, width: view.width-70, height: 50)
         createAccountButton.frame = CGRect(x: 35, y: signInButton.bottom+10, width: view.width-70, height: 50)
-        termsButton.frame = CGRect(x: 35, y: createAccountButton.bottom+80, width: view.width-70, height: 30)
-        privacyButton.frame = CGRect(x: 35, y: termsButton.bottom+20, width: view.width-70, height: 30)
+        termsButton.frame = CGRect(x: 35, y: createAccountButton.bottom+120, width: view.width-70, height: 50)
+        privacyButton.frame = CGRect(x: 35, y: termsButton.bottom+0, width: view.width-70, height: 50)
     }
     
     private func addSubviews() {
