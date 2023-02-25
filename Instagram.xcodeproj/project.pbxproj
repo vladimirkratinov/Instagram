@@ -32,6 +32,13 @@
 		F75D2F1E29A723C0005F70C5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D2F1D29A723C0005F70C5 /* StorageManager.swift */; };
 		F75D2F2029A723D2005F70C5 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D2F1F29A723D2005F70C5 /* AnalyticsManager.swift */; };
 		F75D2F2229A723DA005F70C5 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D2F2129A723DA005F70C5 /* HapticsManager.swift */; };
+		F77BFDC929A982A800BEC245 /* PosterCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77BFDC829A982A800BEC245 /* PosterCollectionViewCellViewModel.swift */; };
+		F77BFDCB29A982FD00BEC245 /* PostCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77BFDCA29A982FD00BEC245 /* PostCollectionViewCellViewModel.swift */; };
+		F77BFDCD29A9835800BEC245 /* PostActionsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77BFDCC29A9835800BEC245 /* PostActionsCollectionViewCellViewModel.swift */; };
+		F77BFDCF29A983A200BEC245 /* PostLikesCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77BFDCE29A983A200BEC245 /* PostLikesCollectionViewCellViewModel.swift */; };
+		F77BFDD129A983E600BEC245 /* PostCaptionCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77BFDD029A983E600BEC245 /* PostCaptionCollectionViewCellViewModel.swift */; };
+		F77BFDD329A9840C00BEC245 /* PostDateTimeCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77BFDD229A9840C00BEC245 /* PostDateTimeCollectionViewCellViewModel.swift */; };
+		F77BFDD529A984F400BEC245 /* HomeFeedCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77BFDD429A984F400BEC245 /* HomeFeedCellType.swift */; };
 		F7BAC56D29A71AC2009A6808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BAC56C29A71AC2009A6808 /* AppDelegate.swift */; };
 		F7BAC56F29A71AC2009A6808 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BAC56E29A71AC2009A6808 /* SceneDelegate.swift */; };
 		F7BAC57129A71AC2009A6808 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BAC57029A71AC2009A6808 /* HomeViewController.swift */; };
@@ -67,6 +74,13 @@
 		F75D2F1D29A723C0005F70C5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		F75D2F1F29A723D2005F70C5 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		F75D2F2129A723DA005F70C5 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		F77BFDC829A982A800BEC245 /* PosterCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		F77BFDCA29A982FD00BEC245 /* PostCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		F77BFDCC29A9835800BEC245 /* PostActionsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostActionsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		F77BFDCE29A983A200BEC245 /* PostLikesCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLikesCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		F77BFDD029A983E600BEC245 /* PostCaptionCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCaptionCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		F77BFDD229A9840C00BEC245 /* PostDateTimeCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDateTimeCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		F77BFDD429A984F400BEC245 /* HomeFeedCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedCellType.swift; sourceTree = "<group>"; };
 		F7BAC56929A71AC2009A6808 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BAC56C29A71AC2009A6808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7BAC56E29A71AC2009A6808 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +145,7 @@
 				F75D2F1329A72320005F70C5 /* Post.swift */,
 				F75D2F1529A7232D005F70C5 /* Relationship.swift */,
 				F75D2F1729A7233B005F70C5 /* Notification.swift */,
+				F77BFDD429A984F400BEC245 /* HomeFeedCellType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,6 +153,12 @@
 		F75D2EF629A71D3A005F70C5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F77BFDC829A982A800BEC245 /* PosterCollectionViewCellViewModel.swift */,
+				F77BFDCA29A982FD00BEC245 /* PostCollectionViewCellViewModel.swift */,
+				F77BFDCC29A9835800BEC245 /* PostActionsCollectionViewCellViewModel.swift */,
+				F77BFDCE29A983A200BEC245 /* PostLikesCollectionViewCellViewModel.swift */,
+				F77BFDD029A983E600BEC245 /* PostCaptionCollectionViewCellViewModel.swift */,
+				F77BFDD229A9840C00BEC245 /* PostDateTimeCollectionViewCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -350,17 +371,24 @@
 				F75D2F2029A723D2005F70C5 /* AnalyticsManager.swift in Sources */,
 				F7BAC57129A71AC2009A6808 /* HomeViewController.swift in Sources */,
 				F75D2F0829A722C2005F70C5 /* SignUpViewController.swift in Sources */,
+				F77BFDC929A982A800BEC245 /* PosterCollectionViewCellViewModel.swift in Sources */,
 				F75D2F1229A7231A005F70C5 /* User.swift in Sources */,
 				F75D2EFF29A72232005F70C5 /* NotificationsViewController.swift in Sources */,
+				F77BFDD329A9840C00BEC245 /* PostDateTimeCollectionViewCellViewModel.swift in Sources */,
 				F731126629A7F95700E1122E /* SignInHeaderView.swift in Sources */,
 				F75D2F1029A722F5005F70C5 /* SettingsViewController.swift in Sources */,
 				F731126A29A7FD8F00E1122E /* IGTextField.swift in Sources */,
+				F77BFDCB29A982FD00BEC245 /* PostCollectionViewCellViewModel.swift in Sources */,
+				F77BFDD529A984F400BEC245 /* HomeFeedCellType.swift in Sources */,
+				F77BFDCF29A983A200BEC245 /* PostLikesCollectionViewCellViewModel.swift in Sources */,
 				F75D2F1C29A723B6005F70C5 /* DatabaseManager.swift in Sources */,
 				F75D2F1629A7232D005F70C5 /* Relationship.swift in Sources */,
 				F75D2F1429A72320005F70C5 /* Post.swift in Sources */,
+				F77BFDD129A983E600BEC245 /* PostCaptionCollectionViewCellViewModel.swift in Sources */,
 				F75D2F1A29A723A8005F70C5 /* AuthManager.swift in Sources */,
 				F75D2F0629A722B5005F70C5 /* SignInViewController.swift in Sources */,
 				F731126829A7FA2B00E1122E /* Extensions.swift in Sources */,
+				F77BFDCD29A9835800BEC245 /* PostActionsCollectionViewCellViewModel.swift in Sources */,
 				F75D2F0129A7224F005F70C5 /* ProfileViewController.swift in Sources */,
 				F75D2F2229A723DA005F70C5 /* HapticsManager.swift in Sources */,
 				F7BAC56D29A71AC2009A6808 /* AppDelegate.swift in Sources */,

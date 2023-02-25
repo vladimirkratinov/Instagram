@@ -10,6 +10,7 @@ import UIKit
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     private var collectionView: UICollectionView?
+    private var viewModels = [[HomeFeedCellType]]()
     
     //MARK: - Lifecycle
     
@@ -19,13 +20,88 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         view.backgroundColor = .systemBackground
         
         configureCollectionView()
+        fetchPosts()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView?.frame = view.bounds
     }
+    
+    private func fetchPosts() {
+        // Mock Data:
+        let postData: [HomeFeedCellType] = [
+            .poster(
+                viewModel: PosterCollectionViewCellViewModel(
+                    username: "wizardexiles",
+                    profilePictureURL: URL(string: "https://www.apple.com")!
+                )
+            ),
+            .post(
+                viewModel: PostCollectionViewCellViewModel(
+                    postURL: URL(string: "https://www.apple.com")!
+                )
+            ),
+            .actions(viewModel: PostActionsCollectionViewCellViewModel(isLiked: true)),
+            .likeCount(viewModel: PostLikesCollectionViewCellViewModel(likers: ["User1", "User2", "User3"])),
+            .caption(viewModel: PostCaptionCollectionViewCellViewModel(username: "wizardexiles", caption: "this is awesome first post")),
+            .timestamp(viewModel: PostDateTimeCollectionViewCellViewModel(date: Date()))
+        ]
+        
+        viewModels.append(postData)
+        collectionView?.reloadData()
+    }
+    
+    //MARK: - Collection View
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return viewModels.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModels[section].count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let colors: [UIColor] = [
+            .blue,
+            .yellow,
+            .green,
+            .red,
+            .magenta,
+            .cyan
+        ]
+        
+        /// give a particular cell type out
+        let cellType = viewModels[indexPath.section][indexPath.row]
+        switch cellType {
+            
+        case .poster(let viewModel):
+            break
+        case .post(let viewModel):
+            break
+        case .actions(let viewModel):
+            break
+        case .likeCount(let viewModel):
+            break
+        case .caption(let viewModel):
+            break
+        case .timestamp(let viewModel):
+            break
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.contentView.backgroundColor = .systemGreen
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.contentView.backgroundColor = colors.randomElement()
+        return cell
+    }
+}
 
+//MARK: - Configure CollectionView:
+
+extension HomeViewController {
     func configureCollectionView() {
         let sectionHeight: CGFloat = 240 + view.width
         let collectionView = UICollectionView(
@@ -110,33 +186,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.register(UICollectionViewCell.self,
                                 forCellWithReuseIdentifier: "cell")
         self.collectionView = collectionView
-    }
-    
-    //MARK: - Collection View
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let colors: [UIColor] = [
-            .blue,
-            .yellow,
-            .green,
-            .red,
-            .magenta,
-            .cyan
-        ]
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.contentView.backgroundColor = .systemGreen
-        cell.layer.borderWidth = 2
-        cell.contentView.backgroundColor = colors.randomElement()
-        return cell
     }
 }
 
