@@ -39,6 +39,6 @@ final class PostCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with viewModel: PostCollectionViewCellViewModel) {
-//        imageView.sd_setImage(with: viewModel.postURL, completed: nil)
+        imageView.sd_setImage(with: viewModel.postURL, completed: nil)
     }
 }
