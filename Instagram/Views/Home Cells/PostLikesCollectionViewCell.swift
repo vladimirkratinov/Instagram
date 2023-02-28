@@ -13,7 +13,6 @@ final class PostLikesCollectionViewCell: UICollectionViewCell {
     private let label: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
-//        label.backgroundColor = .red
         label.font = UIFont(name: "Helvetica", size: 14)
         label.textColor = .gray
         return label
@@ -37,6 +36,7 @@ final class PostLikesCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        label.text = nil
     }
     
     func configure(with viewModel: PostLikesCollectionViewCellViewModel) {
