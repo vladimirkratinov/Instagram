@@ -63,15 +63,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let colors: [UIColor] = [
-            .blue,
-            .yellow,
-            .green,
-            .red,
-            .magenta,
-            .cyan
-        ]
-        
         // give a particular cell type out
         let cellType = viewModels[indexPath.section][indexPath.row]
         switch cellType {
@@ -103,7 +94,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 fatalError()
             }
             cell.configure(with: viewModel)
-            cell.contentView.backgroundColor = colors[indexPath.row]
             return cell
         case .likeCount(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
@@ -113,7 +103,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 fatalError()
             }
             cell.configure(with: viewModel)
-            cell.contentView.backgroundColor = colors[indexPath.row]
             return cell
         case .caption(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
@@ -123,7 +112,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 fatalError()
             }
             cell.configure(with: viewModel)
-            cell.contentView.backgroundColor = colors[indexPath.row]
             return cell
         case .timestamp(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
@@ -133,7 +121,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 fatalError()
             }
             cell.configure(with: viewModel)
-            cell.contentView.backgroundColor = colors[indexPath.row]
             return cell
         }
     }
