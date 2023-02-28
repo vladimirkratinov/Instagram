@@ -8,8 +8,15 @@
 import SDWebImage
 import UIKit
 
+protocol PosterCollectionViewCellDelegate: AnyObject {
+    func posterCollectionViewCellDidTapMore(_ cell: PosterCollectionViewCell)
+    func posterCollectionViewCellDidTapUsername(_ cell: PosterCollectionViewCell)
+}
+
 final class PosterCollectionViewCell: UICollectionViewCell {
     static let identifier = "PosterCollectionViewCell"
+    
+    weak var delegate: PosterCollectionViewCellDelegate?
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -41,6 +48,10 @@ final class PosterCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(moreButton)
         
         moreButton.addTarget(self, action: #selector(didTapMore), for: .touchUpInside)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapUsername))
+        usernameLabel.isUserInteractionEnabled = true
+        usernameLabel.addGestureRecognizer(tap)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -66,7 +77,6 @@ final class PosterCollectionViewCell: UICollectionViewCell {
             width: usernameLabel.width,
             height: contentView.height
         )
-        
         moreButton.frame = CGRect(x: contentView.width-60, y: (contentView.height-50)/2, width: 50, height: 50)
     }
     
@@ -77,7 +87,11 @@ final class PosterCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func didTapMore() {
-        
+        delegate?.posterCollectionViewCellDidTapMore(self)
+    }
+    
+    @objc func didTapUsername(_ sender: UITapGestureRecognizer) {
+        delegate?.posterCollectionViewCellDidTapUsername(self)
     }
     
     func configure(with viewModel: PosterCollectionViewCellViewModel) {

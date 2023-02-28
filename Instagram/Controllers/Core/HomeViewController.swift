@@ -66,6 +66,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // give a particular cell type out
         let cellType = viewModels[indexPath.section][indexPath.row]
         switch cellType {
+            
         case .poster(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: PosterCollectionViewCell.identifier,
@@ -73,9 +74,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             ) as? PosterCollectionViewCell else {
                 fatalError()
             }
+            cell.delegate = self
             cell.configure(with: viewModel)
-//            cell.contentView.backgroundColor = colors[indexPath.row]
             return cell
+            
         case .post(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: PostCollectionViewCell.identifier,
@@ -83,9 +85,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             ) as? PostCollectionViewCell else {
                 fatalError()
             }
+            cell.delegate = self
             cell.configure(with: viewModel)
-//            cell.contentView.backgroundColor = colors[indexPath.row]
             return cell
+            
         case .actions(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: PostActionsCollectionViewCell.identifier,
@@ -93,8 +96,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             ) as? PostActionsCollectionViewCell else {
                 fatalError()
             }
+            cell.delegate = self
             cell.configure(with: viewModel)
             return cell
+            
         case .likeCount(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: PostLikesCollectionViewCell.identifier,
@@ -102,8 +107,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             ) as? PostLikesCollectionViewCell else {
                 fatalError()
             }
+            cell.delegate = self
             cell.configure(with: viewModel)
             return cell
+            
         case .caption(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: PostCaptionCollectionViewCell.identifier,
@@ -111,8 +118,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             ) as? PostCaptionCollectionViewCell else {
                 fatalError()
             }
+            cell.delegate = self
             cell.configure(with: viewModel)
             return cell
+            
         case .timestamp(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: PostDateTimeCollectionViewCell.identifier,
@@ -123,6 +132,60 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.configure(with: viewModel)
             return cell
         }
+    }
+}
+
+//MARK: - Delegate:
+
+extension HomeViewController: PostCaptionCollectionViewCellDelegate {
+    func postCaptionCollectionViewCellDidTapCaption(_ cell: PostCaptionCollectionViewCell) {
+        print("tapped on caption")
+    }
+}
+
+extension HomeViewController: PostLikesCollectionViewCellDelegate {
+    func postLikesCollectionViewCellDidTapLikeCount(_ cell: PostLikesCollectionViewCell) {
+        print("tapped on like count")
+    }
+}
+
+extension HomeViewController: PosterCollectionViewCellDelegate {
+    func posterCollectionViewCellDidTapMore(_ cell: PosterCollectionViewCell) {
+        print("tapped more")
+        let sheet = UIAlertController(title: "Post Actions", message: nil, preferredStyle: .actionSheet)
+        sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        sheet.addAction(UIAlertAction(title: "Share", style: .default))
+        sheet.addAction(UIAlertAction(title: "Report", style: .destructive))
+        present(sheet, animated: true)
+    }
+    
+    func posterCollectionViewCellDidTapUsername(_ cell: PosterCollectionViewCell) {
+        print("tapped username")
+        let vc = ProfileViewController(user: User(username: "wizardexiles", email: "wizardexiles@gmail.com"))
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension HomeViewController: PostCollectionViewCellDelegate {
+    func postCollectionViewCellDidLike(_ cell: PostCollectionViewCell) {
+        print("did tap to like")
+    }
+}
+
+extension HomeViewController: PostActionsCollectionViewCellDelegate {
+    func postActionsCollectionViewCellDidTapLike(_ cell: PostActionsCollectionViewCell, isLiked: Bool) {
+        // Call Database to update Like State:
+    }
+    
+    func postActionsCollectionViewCellDidTapComment(_ cell: PostActionsCollectionViewCell) {
+        let vc = PostViewController()
+        vc.title = "Post"
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func postActionsCollectionViewCellDidTapShare(_ cell: PostActionsCollectionViewCell) {
+        let vc = UIActivityViewController(activityItems: ["Sharing from Instagram"], applicationActivities: [])
+        present(vc, animated: true)
     }
 }
 
