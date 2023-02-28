@@ -14,7 +14,7 @@ final class PostLikesCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.numberOfLines = 1
         label.font = UIFont(name: "Helvetica", size: 14)
-        label.textColor = .gray
+        label.textColor = .secondaryLabel
         return label
     }()
     
