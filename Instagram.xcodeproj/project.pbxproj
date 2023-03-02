@@ -50,6 +50,7 @@
 		F7BAC57129A71AC2009A6808 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BAC57029A71AC2009A6808 /* HomeViewController.swift */; };
 		F7BAC57629A71AC2009A6808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BAC57529A71AC2009A6808 /* Assets.xcassets */; };
 		F7BAC57929A71AC2009A6808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7BAC57729A71AC2009A6808 /* LaunchScreen.storyboard */; };
+		F7D2977929B0631D007582FC /* GPTCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D2977829B0631D007582FC /* GPTCameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		F7BAC57529A71AC2009A6808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7BAC57829A71AC2009A6808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7BAC57A29A71AC2009A6808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7D2977829B0631D007582FC /* GPTCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTCameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				F7BAC57029A71AC2009A6808 /* HomeViewController.swift */,
 				F75D2EFA29A72210005F70C5 /* ExploreViewController.swift */,
 				F75D2EFC29A7221E005F70C5 /* CameraViewController.swift */,
+				F7D2977829B0631D007582FC /* GPTCameraViewController.swift */,
 				F75D2EFE29A72232005F70C5 /* NotificationsViewController.swift */,
 				F75D2F0029A7224F005F70C5 /* ProfileViewController.swift */,
 				F75D2F0229A7228C005F70C5 /* TabBarViewController.swift */,
@@ -413,6 +416,7 @@
 				F75D2F1C29A723B6005F70C5 /* DatabaseManager.swift in Sources */,
 				F75D2F1629A7232D005F70C5 /* Relationship.swift in Sources */,
 				F75D2F1429A72320005F70C5 /* Post.swift in Sources */,
+				F7D2977929B0631D007582FC /* GPTCameraViewController.swift in Sources */,
 				F77BFDD129A983E600BEC245 /* PostCaptionCollectionViewCellViewModel.swift in Sources */,
 				F75D2F1A29A723A8005F70C5 /* AuthManager.swift in Sources */,
 				F75D2F0629A722B5005F70C5 /* SignInViewController.swift in Sources */,
@@ -567,7 +571,7 @@
 				DEVELOPMENT_TEAM = 53V48VAMPV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Instagram/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Instagram;
+				INFOPLIST_KEY_CFBundleDisplayName = "Racoon-gram";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -602,7 +606,7 @@
 				DEVELOPMENT_TEAM = 53V48VAMPV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Instagram/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Instagram;
+				INFOPLIST_KEY_CFBundleDisplayName = "Racoon-gram";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

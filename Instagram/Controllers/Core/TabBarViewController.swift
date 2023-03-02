@@ -26,6 +26,7 @@ class TabBarViewController: UITabBarController {
         let home = HomeViewController()
         let explore = ExploreViewController()
         let camera = CameraViewController()
+//        let camera = GPTCameraViewController()
         let activity = NotificationsViewController()
         let profile = ProfileViewController(user: currentUser)
         

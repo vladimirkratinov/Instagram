@@ -99,7 +99,10 @@ class CameraViewController: UIViewController {
             previewLayer.videoGravity = .resizeAspectFill
             view.layer.addSublayer(previewLayer)
             
-            captureSession.startRunning()
+            // Background Thread UI Issue:
+            DispatchQueue.global().async {
+                captureSession.startRunning()
+            }
         }
     }
     
